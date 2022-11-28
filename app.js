@@ -21,6 +21,8 @@ app.get("/api/movies/:id", movieHandlers.getMovieById);
 app.post("/api/movies", validateMovie, movieHandlers.postMovie);
 //update movies
 app.put("/api/movies/:id", validateMovie, movieHandlers.putMovie);
+//delete movies
+app.delete("/api/movies/:id", movieHandlers.deleteMovie);
 
 const usersHandlers = require("./usersHandlers");
 //Routes Users
@@ -30,6 +32,8 @@ app.get("/api/users/:id", usersHandlers.getUsersId);
 app.post("/api/users", validateUser, usersHandlers.postUser);
 //update users
 app.put("/api/users/:id", validateUser, usersHandlers.putUser);
+//delete users
+app.delete("/api/users/:id", usersHandlers.deleteUser);
 
 app.listen(port, (err) => {
   if (err) {
